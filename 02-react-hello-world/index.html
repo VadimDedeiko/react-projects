@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Hello World!</title>
+</head>
+<body>
+<div id="app">
+
+</div>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script> <!--подключаем реакт-->
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script><!--подключаем реакт дом-->
+<script>
+const helloWorldHeading = React.createElement("h1", null, "Hello world");//создаем компонент
+const container = document.getElementById('app');//находим html with id="app"
+const root = ReactDOM.createRoot(container);
+root.render(helloWorldHeading);
+</script>
+
+</body>
+</html>
