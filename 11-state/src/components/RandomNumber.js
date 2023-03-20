@@ -6,10 +6,11 @@ function generateRandomNumber() {
 
 function RandomNumber() {
   const [randomNum, setRandomNum] = useState(generateRandomNumber());
+  const changeRandomNum = () => setRandomNum(generateRandomNumber())
 return  (
   <div>
     <h1>{randomNum}</h1>
-    <button>Generate new Random Number</button>
+    <button onClick={changeRandomNum}>Generate new Random Number</button>
   </div>
 )
 }
