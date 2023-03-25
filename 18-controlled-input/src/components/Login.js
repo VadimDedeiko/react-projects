@@ -13,17 +13,21 @@ function Login() {
     alert(JSON.stringify(data));
   }
 
+  function handleInputChange(text, name) {
+    setData({ ...data, [name]: text.target.value }); //[name] динамически создает и именует свойства в объекте для разных инпутов
+  }
+
   return (
     <>
       <h1>Login</h1>
       <form onSubmit={handleFormSubmit}>
         <label>
           Username:
-          <input type="text" value={data.name} onChange={(e) => setData({...data, name: e.target.value})} />
+          <input type="text" value={data.name} onChange={(e) => handleInputChange(e, 'name')} />
         </label>
         <label>
           Password:
-          <input type="password" value={data.password} onChange={(e) => setData({...data, password: e.target.value})} />
+          <input type="password" value={data.password} onChange={(e) => handleInputChange(e, 'password')} />
         </label>
         <button type="submit">Login</button>
       </form>
