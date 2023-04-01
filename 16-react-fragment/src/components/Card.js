@@ -1,3 +1,12 @@
+const Card = () => {
+  return (
+    <div className="card">
+      <h1>Bogdan</h1>
+      <h2>Software Engineer</h2>
+      <button>Like</button>
+    </div>
+  )
+}
 import React from "react";
 
 const Card = () => {
