@@ -11,7 +11,9 @@ function Posts() {
       .then((posts) => {
         console.log(posts);
         setPosts(posts)
-      }).catch((err) => setError(err.message)).finally(() => setIsLoading(false));
+      })
+      .catch((err) => setError(err.message))
+      .finally(() => setIsLoading(false));
   }, []);
   if (error) {
     return <p>Error {error}</p>;
