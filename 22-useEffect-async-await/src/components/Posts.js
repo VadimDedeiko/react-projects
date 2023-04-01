@@ -4,11 +4,24 @@ import React, { useEffect, useState } from "react";
 const URI_API = "https://jsonplaceholder.typicode.com/posts";
 
 function Posts() {
-  const [posts, setPosts] = useState([])
-  const [error, setError] = useState('');
+  const [posts, setPosts] = useState([]);
+  const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-
+//using throw IIFE
   useEffect(() => {
+    (async function fetchData() {
+      try {
+        const res = await fetch(URI_API);
+        const posts = await res.json();
+        setPosts(posts);
+      } catch (error) {
+        setError(error.message);
+      }
+      setIsLoading(false);
+    })();
+  }, []);
+
+  /*useEffect(() => {
     async function fetchData() {
       try {
         const res = await fetch(URI_API)
@@ -20,7 +33,7 @@ function Posts() {
       setIsLoading(false)
     }
     fetchData()
-  }, [])
+  }, [])*/
 
   /*useEffect(() => {
     fetch(URI_API)
@@ -40,7 +53,7 @@ function Posts() {
       <h1>Posts</h1>
       <hr></hr>
       {
-        isLoading ? (<p>Loading...</p>) : (posts.map((post) =><Post key={post.id} {...post}></Post>))
+        isLoading ? (<p>Loading...</p>) : (posts.map((post) => <Post key={post.id} {...post}></Post>))
       }
     </>
   );
