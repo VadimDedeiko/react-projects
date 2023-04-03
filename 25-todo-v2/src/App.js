@@ -51,6 +51,10 @@ function App() {
       )}
       <TodoList todos={todos} deleteTodo={deleteTodoHandler}
                 toggleTodo={toggleTodoHandler} />
+      {completedTodosCount > 0
+        && <h2>{
+          `You have complited ${completedTodosCount} 
+          ${completedTodosCount > 1 ? 'todos' : 'todo'}`}</h2>}
     </div>
   );
 }
