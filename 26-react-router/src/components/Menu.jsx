@@ -1,12 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Menu = () => {
+  const className = ({ isActive }) => isActive ? "activeLink" : "link";
   return (
     <nav>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      <Link to="/contacts">Contacts</Link>
+      <NavLink className={className} to="/" end>Home</NavLink>
+      <NavLink to="courses">Courses</NavLink>
+      <NavLink className={className} to="/about">About</NavLink>
+      <NavLink className={className} to="/contacts">Contacts</NavLink>
     </nav>
   );
 };

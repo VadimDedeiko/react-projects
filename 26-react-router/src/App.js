@@ -6,6 +6,9 @@ import Contacts from "./components/Contacts";
 import About from "./components/About";
 import NotFound from "./components/NotFound";
 import MainLayout from "./layouts/MainLayout";
+import Courses from "./components/Courses";
+import SingleCourses from "./components/SingleCourses";
+
 
 function App() {
   return (
@@ -16,6 +19,8 @@ function App() {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="contacts" element={<Contacts />} />
+            <Route path="courses" element={<Courses />} />
+            <Route path="courses/:slug" element={<SingleCourses />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

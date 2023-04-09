@@ -15,6 +15,25 @@ a {
   color: lightblue;
   font-size: 35px;
 }
+/*Used by default with NavLink*/
+/*.active {
+  collor: lightyellow;
+  text-decoration: none;
+}*/
+
+.activeLink {
+  collor: lightyellow;
+  text-decoration: none;
+}
+
+.courseLink {
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.courseLink:hover {
+  text-decoration: underline;
+}
 
 a {
   margin: 15px;
