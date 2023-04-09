@@ -13,10 +13,6 @@ const SingleCourses = () => {
     }
   }, [course, navigate]
 )
- // simple not found component
-  /*if (!course) {
-    return <NotFound />
-  }*/
   return (
     <>
       <h1>{course?.title}</h1>
